@@ -8,21 +8,23 @@ import static org.junit.jupiter.api.Assertions.*;
 class MoviesManagerTest {
 
     private MoviesManager manager = new MoviesManager();
-    MoviesManager first = new MoviesManager(1, "Bloodshot", "Action");
-    MoviesManager second = new MoviesManager(2, "Onward", "Cartoon");
-    MoviesManager third = new MoviesManager(3, "Hotel Belgrade", "Comedy");
-    MoviesManager fourth = new MoviesManager(4, "Gentlemen", "Fighter");
-    MoviesManager fifth = new MoviesManager(5, "The invisible man", "Horror");
-    MoviesManager sixth = new MoviesManager(6, "Trolls World tour", "Cartoon");
-    MoviesManager seventh = new MoviesManager(7, "Number one", "Comedy");
-    MoviesManager eighth = new MoviesManager(8, "Harry Potter", "Fantasy");
-    MoviesManager ninth = new MoviesManager(9, "Men in black 1", "Science fiction");
-    MoviesManager tenth = new MoviesManager(10, "Men in black 2", "Science fiction");
-    MoviesManager eleventh = new MoviesManager(11, "Men in black 3", "Science fiction");
-    MoviesManager twelfth = new MoviesManager(11, "Men in black 4", "Science fiction");
+
+    Movies first = new Movies(1, "Bloodshot", "Action");
+    Movies second = new Movies(2, "Onward", "Cartoon");
+    Movies third = new Movies(3, "Hotel Belgrade", "Comedy");
+    Movies fourth = new Movies(4, "Gentlemen", "Fighter");
+    Movies fifth = new Movies(5, "The invisible man", "Horror");
+    Movies sixth = new Movies(6, "Trolls World tour", "Cartoon");
+    Movies seventh = new Movies(7, "Number one", "Comedy");
+    Movies eighth = new Movies(8, "Harry Potter", "Fantasy");
+    Movies ninth = new Movies(9, "Men in black 1", "Science fiction");
+    Movies tenth = new Movies(10, "Men in black 2", "Science fiction");
+    Movies eleventh = new Movies(11, "Men in black 3", "Science fiction");
+    Movies twelfth = new Movies(12, "Men in black 4", "Science fiction");
 
     @BeforeEach
     public void setUp() {
+
         manager.add(first);
         manager.add(second);
         manager.add(third);
@@ -34,8 +36,8 @@ class MoviesManagerTest {
     public void shouldAddNewMovie() {
         manager.add(sixth);
 
-        MoviesManager[] actual = manager.getMovies();
-        MoviesManager[] expected = new MoviesManager[]{first, second, third, fourth, fifth, sixth};
+        Movies[] actual = manager.getMovies();
+        Movies[] expected = new Movies[]{first, second, third, fourth, fifth, sixth};
         assertArrayEquals(expected, actual);
     }
 
@@ -48,8 +50,8 @@ class MoviesManagerTest {
         manager.add(tenth);
         manager.add(eleventh);
 
-        MoviesManager[] actual = manager.getMovies();
-        MoviesManager[] expected = new MoviesManager[]{first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth, eleventh};
+        Movies[] actual = manager.getMovies();
+        Movies[] expected = new Movies[]{first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth, eleventh};
         assertArrayEquals(expected, actual);
     }
 
@@ -68,8 +70,8 @@ class MoviesManagerTest {
         manager.add(tenth);
         manager.add(eleventh);
 
-        MoviesManager[] actual = manager.show10LatestAddedMovies();
-        MoviesManager[] expected = new MoviesManager[]{eleventh, tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second};
+        Movies[] actual = manager.showLatestAddedMovies();
+        Movies[] expected = new Movies[]{eleventh, tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second};
         assertArrayEquals(expected, actual);
     }
 
@@ -90,8 +92,8 @@ class MoviesManagerTest {
         manager.add(eleventh);
 
 
-        MoviesManager[] actual = manager.show10LatestAddedMovies();
-        MoviesManager[] expected = new MoviesManager[]{eleventh, tenth, ninth, eighth, seventh};
+        Movies[] actual = manager.showLatestAddedMovies();
+        Movies[] expected = new Movies[]{eleventh, tenth, ninth, eighth, seventh};
         assertArrayEquals(expected, actual);
     }
 
@@ -112,8 +114,8 @@ class MoviesManagerTest {
         manager.add(eleventh);
 
 
-        MoviesManager[] actual = manager.show10LatestAddedMovies();
-        MoviesManager[] expected = new MoviesManager[]{eleventh};
+        Movies[] actual = manager.showLatestAddedMovies();
+        Movies[] expected = new Movies[]{eleventh};
         assertArrayEquals(expected, actual);
     }
 
@@ -133,9 +135,8 @@ class MoviesManagerTest {
         manager.add(eleventh);
 
 
-
-        MoviesManager[] actual = manager.show10LatestAddedMovies();
-        MoviesManager[] expected = new MoviesManager[]{eleventh, tenth, ninth, eighth, seventh, sixth, fifth, fourth, third,second, first};
+        Movies[] actual = manager.showLatestAddedMovies();
+        Movies[] expected = new Movies[]{eleventh, tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second, first};
         assertArrayEquals(expected, actual);
     }
 
@@ -155,9 +156,8 @@ class MoviesManagerTest {
         manager.add(eleventh);
 
 
-
-        MoviesManager[] actual = manager.show10LatestAddedMovies();
-        MoviesManager[] expected = new MoviesManager[]{eleventh, tenth, ninth, eighth, seventh, sixth, fifth, fourth, third};
+        Movies[] actual = manager.showLatestAddedMovies();
+        Movies[] expected = new Movies[]{eleventh, tenth, ninth, eighth, seventh, sixth, fifth, fourth, third};
         assertArrayEquals(expected, actual);
     }
 
