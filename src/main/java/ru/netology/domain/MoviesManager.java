@@ -54,19 +54,7 @@ public class MoviesManager {
 }
 //В этой задаче не нужно разделять менеджер и репозиторий - все фильмы должны храниться внутри массива в поле самого менеджера.
 //То есть, мы создаем вложенный класс Movies, чтобы не создавать отдельный
-class Movies {
-
-    private int id;
-    private String title;
-    private String genre;
 
 
-    public Movies(int id, String title, String genre) {
-        this.id = id;
-        this.title = title;
-        this.genre = genre;
-
-    }
-}
 
 
